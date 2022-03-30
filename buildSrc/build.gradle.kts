@@ -1,10 +1,9 @@
-import org.gradle.kotlin.dsl. `kotlin-dsl`
+import org.gradle.kotlin.dsl.`kotlin-dsl`
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 plugins {
-	`kotlin-dsl`
-	
+    `kotlin-dsl`
 }
