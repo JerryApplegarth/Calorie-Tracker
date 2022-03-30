@@ -10,16 +10,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.applecompose.core.R
+import com.applecompose.core.navigation.Route
+import com.applecompose.core.util.UiEvent
 import com.applecompose.core_ui.LocalSpacing
 import com.applecompose.onboarding_presentation.components.ActionButton
 
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(
+	onNavigate: (UiEvent.Navigate) -> Unit
+) {
+	
 	val spacing = LocalSpacing.current
 	Column(
 		modifier = Modifier
-			.fillMaxSize(),
+			.fillMaxSize()
+			.padding(spacing.spaceMedium),
 		verticalArrangement = Arrangement.Center,
 		horizontalAlignment = Alignment.CenterHorizontally
 	) {
@@ -32,7 +38,7 @@ fun WelcomeScreen() {
 		Spacer(modifier = Modifier.height(spacing.spaceMedium))
 		ActionButton(
 			text = stringResource(id = R.string.next),
-			onClick = { /*TODO*/ },
+			onClick = { onNavigate(UiEvent.Navigate(Route.AGE)) },
 			modifier = Modifier.align(Alignment.CenterHorizontally)
 		
 			)
